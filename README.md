@@ -54,7 +54,7 @@ In order to run the application, open the server.js file in integrated terminal,
 <summary>Technology used to create application</summary>
 
 
-* 
+* mysql
 
 * 
 

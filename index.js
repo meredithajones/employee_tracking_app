@@ -22,3 +22,20 @@ const connection = mysql.createConnection({
   });
   
   //Start the inquirer prompts
+
+  const start = () => {
+    inquirer.prompt([
+            {
+            type:'list',
+            name:'start',
+            message: 'What would you like to do?',
+            choices: [
+                    'View All Employees',
+                    'View Employees by Roles',
+                    'View Employees by Department',
+                    'Add an Employee',
+                    'Add a Role',
+                    'Add a Department',
+                    'Update an Employee Role',
+                    'Finish'
+                      ]
