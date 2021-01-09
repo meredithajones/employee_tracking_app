@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
     // Your MySQL username
     user: 'root',
     // Your MySQL password 
-    password: '',
+    password: 'Newcoding#2020',
     // Name of database
     database: "employee_tracker_db",
   });
@@ -37,5 +37,51 @@ const connection = mysql.createConnection({
                     'Add a Role',
                     'Add a Department',
                     'Update an Employee Role',
+                    'Remove an Employee',
                     'Finish'
                       ]
+                    }
+                ])
+
+    //Setting up cases for the responses
+        .then(response => {
+                  switch (response.action) {
+                    case "View All Employees":
+                      viewEmployees();
+                      break;
+
+                    case "View Employees by Roles":
+                        viewRoles();
+                        break;
+            
+                    case "View Employees By Department":
+                      employeesByDepartment();
+                      break;
+            
+                    case "Add an Employee":
+                      addEmployee();
+                      break;
+            
+                    case "Add a Role":
+                      addRole();
+                      break;
+            
+                    case "Add a Department":
+                      addDepartment();
+                      break;
+            
+                    case "Update an Employee Role":
+                      updateRole();
+                      break;
+            
+                    case "Remove an Employee":
+                      removeEmployee();
+                      break;
+    
+            //Use connection.end if user selects "finish"
+                    case "Finish":
+                      connection.end();
+                      break;
+                  }
+                });
+            }
